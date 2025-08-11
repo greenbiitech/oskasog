@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -67,6 +68,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Cormorant Garamond", serif; /* Apply Cormorant Garamond globally */
+    /* Removed global font-family to allow specific targeting */
+  }
+
+  /* Apply Cormorant Garamond to headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  /* Apply Mulish to paragraphs */
+  p {
+    font-family: "Mulish", sans-serif;
   }
 }
+

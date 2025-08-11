@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Play, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 type VideoPlayerProps = {
   videoId: string;
@@ -27,11 +28,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId }) => {
           onClick={handlePlayClick}
         >
           {/* Video Thumbnail - Using YouTube thumbnail */}
-          <div className="aspect-video bg-gray-800 rounded-2xl overflow-hidden">
-            <img
+           <div className="aspect-video bg-gray-800 rounded-2xl overflow-hidden relative">
+            <Image
               src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
               alt="OSKASOG Hall - Discover Our Journey"
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 1280px) 100vw, 1280px" // Optional: Helps with responsive sizing
             />
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-300" />
