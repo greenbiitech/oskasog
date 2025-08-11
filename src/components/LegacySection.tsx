@@ -35,16 +35,18 @@ const LegacySection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Main Portrait */}
-            <div className="relative rounded-2xl overflow-hidden">
+              <div className="relative rounded-2xl overflow-hidden">
               <motion.div
                 className="relative"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
+                <Image
                   src="/images/oba-image.png"
                   alt="Oba (Dr.) Sikiru Kayode Adetona in traditional royal attire"
-                  className="w-full h-auto object-cover"
+                  fill
+                  className="object-cover" // Removed w-full h-auto
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" 
                 />
               </motion.div>
             </div>
@@ -66,7 +68,7 @@ const LegacySection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                Founder's Vision
+                Founder&#39;s Vision
               </motion.p>
 
               <motion.h2
@@ -96,7 +98,7 @@ const LegacySection = () => {
               </p>
 
               <p>
-                Oba Adetona's dedication to fostering a new era of accountable
+                Oba Adetona&#39;s dedication to fostering a new era of accountable
                 and effective leadership is woven into the fabric of our
                 programmes, ensuring that each student is equipped to drive
                 change and promote good governance. We are proud to continue

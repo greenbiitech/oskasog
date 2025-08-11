@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -69,17 +69,17 @@ const FoundersVisionPage = () => {
       <section className="relative  bg-[#18254F] text-white py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/legacy-bg.png"
-          alt="University campus background"
-          fill 
-          className="object-cover opacity-60"
-          priority 
-        />
-        <div className="absolute inset-0 bg-[#18254F]/50"></div>
-      </div>
+          <Image
+            src="/images/legacy-bg.png"
+            alt="University campus background"
+            fill
+            className="object-cover opacity-60"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#18254F]/50"></div>
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 mt-6">
           <div className="grid lg:grid-cols-5 gap-8 items-start">
             {/* Left side - Text content */}
             <motion.div
@@ -89,10 +89,10 @@ const FoundersVisionPage = () => {
               className="lg:col-span-2 space-y-6"
             >
               <motion.h1
-                className="text-4xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg"
+                className="text-3xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg mt-4"
                 variants={fadeInUp}
               >
-                The Evolutionary Tale of Oba (Dr.) Sikiru Kayode Adetona's
+                The Evolutionary Tale of Oba (Dr.) Sikiru Kayode Adetona&#39;s
                 School of Governance
               </motion.h1>
               <motion.p
@@ -111,7 +111,7 @@ const FoundersVisionPage = () => {
 
             {/* Right side - Images layout */}
             <motion.div
-              className="lg:col-span-3 grid grid-cols-2 gap-4"
+              className="lg:col-span-3 grid grid-cols-2 gap-4 mt-6"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
@@ -129,10 +129,10 @@ const FoundersVisionPage = () => {
               </motion.div>
 
               {/* Top right image */}
-           <motion.div variants={scaleIn}>
+              <motion.div variants={scaleIn}>
                 <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 h-48 relative">
                   <Image
-                    src="/images/f-vision.png" 
+                    src="/images/f-vision.png"
                     alt="Oba Adetona Portrait"
                     fill
                     className="object-cover"
@@ -141,7 +141,7 @@ const FoundersVisionPage = () => {
               </motion.div>
 
               {/* Bottom right image - School Crest */}
-                <motion.div variants={scaleIn}>
+              <motion.div variants={scaleIn}>
                 <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 h-48 relative">
                   <Image
                     src="/images/emblem.png"
@@ -157,85 +157,112 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Embarking on a Visionary Mission Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+
+      <section className="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-100 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div
-            className="grid lg:grid-cols-2 gap-12 items-start"
+            className="grid lg:grid-cols-2 gap-16 items-center"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.div variants={fadeInLeft}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Embarking on a Visionary Mission
               </h2>
             </motion.div>
             <motion.div variants={fadeInRight}>
               <p className="text-gray-700 leading-relaxed text-lg">
-                The school's origins date back to the creation of the
+                The school&#39;s origins date back to the creation of the
                 Professorial Chair in Governance in 2018, a significant
-                milestone in Oba Adetona's dream to enhance Nigeria's tertiary
-                education sector. The collaborative spirit of the university's
-                administrative apparatus, along with other stakeholders, played
-                a pivotal role in nurturing this vision and transforming it into
-                a critical role in realizing this dream.
+                milestone in Oba Adetona&#39;s dream to enhance Nigeria&#39;s
+                tertiary education sector. The collaborative spirit of the
+                university&#39;s administration, particularly under the guidance
+                of Professor Saburi Adesanya and Professor Ganiyu Olatunde,
+                played a critical role in realizing this dream.
               </p>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Vision Quote */}
+      {/* Vision Quote Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div
-            className="mt-16"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            <Card className="shadow-xl hover:shadow-2xl transition-all duration-500">
-              <CardContent className="p-10 text-center">
-                <motion.blockquote
-                  className="text-xl italic text-gray-800 mb-6 leading-relaxed"
-                  variants={fadeInUp}
-                >
-                  "I envisage the burgeoning School as a centre of topical
+            {/* Blue header bar */}
+            <div className="h-2 bg-blue-500"></div>
+
+            <div className="p-12">
+              {/* Quote text */}
+              <motion.div className="text-center mb-8" variants={fadeInUp}>
+                <blockquote className="text-lg leading-relaxed text-gray-800 mb-6">
+                  &quot;I envisage the burgeoning School as a centre of topical
                   discourse of innovative ideas and research that will transform
                   higher education and policy-focused governance interventions
                   beyond their current mediocrity. In the same breath, I will
-                  hope that as it grows, it will bring forth fruits of
-                  governance and policy expertise that will define new standards
-                  and expand their space in governance practice, policy and
-                  theory."
-                </motion.blockquote>
-                <motion.p
-                  className="text-gray-600 mb-8 leading-relaxed"
-                  variants={fadeInUp}
-                >
+                  hope&#39; that as it grows, it will bring around far-flung
+                  network of scholars from the rest of Africa and the world who
+                  will contribute their quota on governance, policy and theory.&quot;
+                </blockquote>
+
+                <p className="text-base leading-relaxed text-gray-700 mb-8">
                   Consequently, I expect it to stimulate the current and next
                   generation of scholars, technocrats and intellectuals to
                   develop homegrown solutions to the seemingly intractable
                   problems of our world. I hope the School will be at the
                   forefront of intellectual agenda setting and provide
-                  leadership that will transform governance practice in our
-                  troubled world for the better, creating wilderness in which to
-                  bud have branded for our long.
-                </motion.p>
-                <motion.div className="border-t pt-6" variants={fadeInUp}>
-                  <p className="font-bold text-gray-900 text-lg">
+                  theoretical and empirical grist for the kind of innovations
+                  that will move our world out of the wilderness in which it has
+                  been stranded for too long.
+                </p>
+              </motion.div>
+
+              {/* Author section with image */}
+              <motion.div
+                className="flex flex-col items-center"
+                variants={fadeInUp}
+              >
+                {/* Profile image */}
+                <div className="mb-4">
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-300 relative">
+                    <Image
+                      src="/images/oba1.png"
+                      alt="Oba (Dr.) Sikiru Kayode Adetona"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Author details */}
+                <div className="text-center">
+                  <h3 className="font-bold text-gray-900 text-lg mb-1">
                     Oba (Dr.) Sikiru Kayode Adetona
+                  </h3>
+                  <p className="text-gray-600 text-sm font-medium">
+                    The Awujale of Ijebuland / Founder
                   </p>
-                  <p className="text-gray-600 font-medium">
-                    The Awujale of Ijebuland (Founder)
-                  </p>
-                </motion.div>
-              </CardContent>
-            </Card>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Dark accent on the right */}
+            <div className="absolute top-0 right-0 w-16 h-12 bg-gray-800"></div>
           </motion.div>
         </div>
       </section>
 
       {/* Legacy Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12"
@@ -264,7 +291,7 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Establishment Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10  bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12"
@@ -293,7 +320,7 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Intellectual Excellence Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12"
@@ -321,7 +348,7 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Philanthropic Foundations Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12"
@@ -337,8 +364,8 @@ const FoundersVisionPage = () => {
             </motion.div>
             <motion.div variants={fadeInRight}>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Oba Adetona's sustained generosity has been a cornerstone of the
-                school's development. His substantial financial contributions
+                Oba Adetona&#39;s sustained generosity has been a cornerstone of the
+                school&#39;s development. His substantial financial contributions
                 have enabled the construction of modern facilities and the
                 provision of top-tier resources, underpinning his commitment to
                 societal betterment and educational advancement.
@@ -349,7 +376,7 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Transformative Future Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12"
@@ -379,7 +406,7 @@ const FoundersVisionPage = () => {
       </section>
 
       {/* Global Epicenter Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-12 mb-16"
@@ -425,11 +452,14 @@ const FoundersVisionPage = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
-              <img
-                src="/api/placeholder/800/400"
+            <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] relative h-[26.5rem]">
+              {" "}
+              {/* Adjusted height to ~664px */}
+              <Image
+                src="/images/oskasog-library-1.jpg"
                 alt="School library and study area"
-                className="w-full h-96 object-cover"
+                fill
+                className="object-cover" // Using object-cover to fill the space
               />
             </Card>
           </motion.div>

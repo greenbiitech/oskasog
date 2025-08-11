@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import FacilitiesCarousel from "@/components/FacilitiesCarousel";
 import Navbar from "@/components/Navbar";
 import NewHero from "@/components/NewHero";
@@ -10,49 +9,19 @@ import XIcon from "@/components/ui/XIcon";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
-  Award,
-  BookOpen,
   Eye,
   Facebook,
-  Globe,
   Heart,
   Instagram,
   Lightbulb,
-  Mail,
-  MapPin,
   Phone,
   Sun,
-  Twitter,
-  Users,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [showNewHero, setShowNewHero] = useState(false);
-
-  const programs = [
-    {
-      title: "Undergraduate Studies",
-      description: "Build your foundation in governance and leadership",
-      category: "Bachelor's",
-    },
-    {
-      title: "Postgraduate Studies",
-      description: "Advanced studies in public administration",
-      category: "Master's",
-    },
-    {
-      title: "Short-term Courses",
-      description: "Professional development programs",
-      category: "Certificate",
-    },
-    {
-      title: "Research Programs",
-      description: "Cutting-edge governance research",
-      category: "PhD",
-    },
-  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -107,11 +76,13 @@ export default function Home() {
                 <div className="flex items-stretch space-x-4">
                   {/* Changed to items-stretch */}
                   <div className="w-20 flex-shrink-0">
-                    <div className="w-full h-full bg-gray-300 rounded-xl overflow-hidden">
-                      <img
+                    <div className="w-full h-full bg-gray-300 rounded-xl overflow-hidden relative">
+                      <Image
                         src="/images/prof-A-A.png"
                         alt="Professor A. A. Anyaegbunam"
-                        className="w-full h-full object-cover" // h-full will match the parent
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 20vw"
                       />
                     </div>
                   </div>
@@ -241,11 +212,15 @@ export default function Home() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img
-                    src="/images/oba-image.png"
-                    alt="Oba (Dr.) Sikiru Kayode Adetona in traditional royal attire"
-                    className="w-full h-auto object-cover"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/images/oba-image.png"
+                      alt="Oba (Dr.) Sikiru Kayode Adetona in traditional royal attire"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -266,7 +241,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  Founder's Vision
+                  Founder&#39;s Vision
                 </motion.p>
 
                 <motion.h2
@@ -296,7 +271,7 @@ export default function Home() {
                 </p>
 
                 <p>
-                  Oba Adetona's dedication to fostering a new era of accountable
+                  Oba Adetona&#39;s dedication to fostering a new era of accountable
                   and effective leadership is woven into the fabric of our
                   programmes, ensuring that each student is equipped to drive
                   change and promote good governance. We are proud to continue
@@ -394,10 +369,12 @@ export default function Home() {
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                   {/* Image Container */}
                   <div className="relative h-80 overflow-hidden">
-                    <img
+                    <Image
                       src={program.image}
                       alt={program.alt}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                     />
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300" />
@@ -544,12 +521,13 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="h-96 bg-gray-300 rounded-2xl overflow-hidden shadow-xl">
-                    {/* Increased from implicit height to h-80 (320px) */}
-                    <img
+                  <div className="h-96 bg-gray-300 rounded-2xl overflow-hidden shadow-xl relative">
+                    <Image
                       src="/images/future-one.png"
                       alt="Confident student wearing sunglasses and yellow top"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
                 </motion.div>
@@ -562,12 +540,13 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="h-45 bg-yellow-100 rounded-2xl overflow-hidden shadow-xl">
-                    {/* Increased from h-32 (128px) to h-48 (192px) */}
-                    <img
+                 <div className="h-48 bg-yellow-100 rounded-2xl overflow-hidden shadow-xl relative">
+                    <Image
                       src="/images/future-two.png"
                       alt="Students using technology for learning"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
                 </motion.div>
@@ -580,12 +559,13 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="h-45 bg-yellow-200 rounded-2xl overflow-hidden shadow-xl">
-                    {/* Increased from h-32 (128px) to h-48 (192px) */}
-                    <img
+                  <div className="h-48 bg-yellow-200 rounded-2xl overflow-hidden shadow-xl relative">
+                    <Image
                       src="/images/future-three.jpg"
                       alt="Modern classroom with students"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
                 </motion.div>
@@ -637,11 +617,11 @@ export default function Home() {
               Our Campus and Facilities
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Nestled in the heart of Olabisi Onabanjo University's main campus
-              in Ago Iwoye, Ogun State,
-              takes pride in its modern and fully-equipped facilities. From
-              versatile multipurpose expansive office complexes to state-of-the-art lecture theatres,
-              every space is designed to enhance learning and innovation.
+              Nestled in the heart of Olabisi Onabanjo University&#39;s main campus
+              in Ago Iwoye, Ogun State, takes pride in its modern and
+              fully-equipped facilities. From versatile multipurpose expansive
+              office complexes to state-of-the-art lecture theatres, every space
+              is designed to enhance learning and innovation.
             </p>
           </motion.div>
 

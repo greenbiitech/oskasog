@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 const FacilitiesCarousel = () => {
@@ -110,7 +111,7 @@ const FacilitiesCarousel = () => {
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           style={{ width: `${(facilities.length / 4) * 100}%` }}
         >
-          {facilities.map((facility, index) => (
+          {facilities.map((facility) => (
             <motion.div
               key={facility.id}
               className="flex-shrink-0"
@@ -118,11 +119,13 @@ const FacilitiesCarousel = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden shadow-lg">
-                <img
+              <div className="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden shadow-lg relative">
+                <Image
                   src={facility.image}
                   alt={facility.alt}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover" // Removed w-full h-full
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" // Adjusted for responsive layout
                 />
               </div>
             </motion.div>

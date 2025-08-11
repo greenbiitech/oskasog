@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import {
   NavigationMenu,
@@ -25,7 +25,7 @@ const Navbar = () => {
     About: [
       "About Us",
       "The Founders Vision",
-      "Identity, Vision and Values",
+      "Identity Vision and Values",
       "Governing Board",
       "Principal Officers",
       "Virtual Tour",
