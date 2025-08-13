@@ -3,7 +3,7 @@ import XIcon from "./ui/XIcon";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const GoverningBoardSection = () => {
+const PrincipalOfficersSection = () => {
   const fadeInUp = {
     initial: { y: 60, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -87,12 +87,13 @@ const GoverningBoardSection = () => {
           className="md:w-1/2 mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Meet our esteemed Governing Board
+            Meet our dedicated Principal Officers
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A collective of experienced leaders who shape our strategic
-            direction and uphold our commitment to excellence. Each member
-            brings unique expertise and insight, driving our success.
+            Meet our Principal Officers and Management team, key drivers of our
+            operational success and strategic goals. Their diverse expertise and
+            leadership are crucial to our progress. Click on each image for
+            their full profiles to learn more about their roles and experience.
           </p>
         </motion.div>
 
@@ -160,4 +161,4 @@ const GoverningBoardSection = () => {
   );
 };
 
-export default GoverningBoardSection;
+export default PrincipalOfficersSection;
