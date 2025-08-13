@@ -34,11 +34,12 @@ const Navbar = () => {
       "Postgraduate Diplomas & Masters",
       "PhD Programmes",
       "Short-Term Courses",
+      "Research"
     ],
     News: ["Announcements", "Blog", "Events", "Press Releases"],
   };
 
-  const simpleMenuItems = ["Admissions", "Research", "Contact"];
+  const simpleMenuItems = ["Admissions", "Portal", "Contact"];
 
   useEffect(() => {
     const handleScroll = () => {

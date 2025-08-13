@@ -8,7 +8,7 @@ import XIcon from "./ui/XIcon";
 const FooterSection = () => {
     return (
         <motion.footer
-        className="bg-slate-800 text-white py-16"
+        className="bg-[#18254F] text-white py-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
